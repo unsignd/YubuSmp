@@ -17,7 +17,6 @@ public class EventListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         e.setJoinMessage(e.getPlayer().getName() + " < 이사람 서버접속함");
-        getLogger().info(e.getPlayer().getBedSpawnLocation().getX() + "");
 
         if(!e.getPlayer().hasPlayedBefore()) {
             Random randomPos = new Random();
