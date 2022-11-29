@@ -21,9 +21,9 @@ public class EventListener implements Listener {
 
         if(!e.getPlayer().hasPlayedBefore()) {
             Random randomPos = new Random();
-            int randomX = randomPos.nextInt(100000) - 50000;
-            int randomZ = randomPos.nextInt(100000) - 50000;
-            Block block = Bukkit.getWorld("World").getHighestBlockAt(randomPos.nextInt(50000) - 25000 + randomX, randomPos.nextInt(50000) - 25000 + randomZ);
+            int randomX = randomPos.nextInt(10000) - 5000;
+            int randomZ = randomPos.nextInt(10000) - 5000;
+            Block block = Bukkit.getWorld("World").getHighestBlockAt(randomPos.nextInt(5000) - 2500 + randomX, randomPos.nextInt(5000) - 2500 + randomZ);
             e.getPlayer().teleport(block.getLocation().add(.5, 1, .5));
             e.getPlayer().setBedSpawnLocation(block.getLocation().add(.5, 1, .5), true);
         }
