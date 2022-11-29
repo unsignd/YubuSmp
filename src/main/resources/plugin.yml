@@ -1,0 +1,6 @@
+name: Yubusmp
+version: '${project.version}'
+main: me.yejoon.yubusmp.Yubusmp
+api-version: 1.19
+authors: [ unsignd ]
+website: https://yejoon.me
