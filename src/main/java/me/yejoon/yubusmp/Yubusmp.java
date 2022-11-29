@@ -6,7 +6,8 @@ public final class Yubusmp extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getLogger().info("Hello, world!");
+        getServer().getPluginManager().registerEvents(new EventListener(), this);
+        getLogger().info("YUBU SMP PLUGIN ENABLED");
     }
 
     @Override
