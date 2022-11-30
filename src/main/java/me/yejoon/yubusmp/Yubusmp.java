@@ -25,8 +25,7 @@ public final class Yubusmp extends JavaPlugin {
         compMeta.addEnchant(Enchantment.LUCK, 1, false);
         comp.setItemMeta(compMeta);
 
-        ShapedRecipe compass = new ShapedRecipe(new NamespacedKey(this, "warp"), comp);
-        getLogger().info(compass.getKey().getKey());
+        ShapedRecipe compass = new ShapedRecipe(comp);
         compass.shape("EDE", "DWD", "EDE");
         compass.setIngredient('E', Material.ENDER_EYE);
         compass.setIngredient('D', Material.DIAMOND);
