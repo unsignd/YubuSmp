@@ -19,13 +19,14 @@ public final class Yubusmp extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EventListener(), this);
 
         ItemStack comp = new ItemStack(Material.ENDER_PEARL);
-        CompassMeta compMeta = (CompassMeta) comp.getItemMeta();
+        ItemMeta compMeta = comp.getItemMeta();
 
         compMeta.setDisplayName(ChatColor.RED + "순간이동기");
         compMeta.addEnchant(Enchantment.LUCK, 1, false);
         comp.setItemMeta(compMeta);
 
-        ShapedRecipe compass = new ShapedRecipe(comp);
+        ShapedRecipe compass = new ShapedRecipe(new NamespacedKey(this, "warp"), comp);
+        getLogger().info(compass.getKey().getKey());
         compass.shape("EDE", "DWD", "EDE");
         compass.setIngredient('E', Material.ENDER_EYE);
         compass.setIngredient('D', Material.DIAMOND);
