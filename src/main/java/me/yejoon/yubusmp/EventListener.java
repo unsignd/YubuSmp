@@ -7,10 +7,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.player.PlayerBedEnterEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.event.player.*;
+import org.bukkit.inventory.ShapedRecipe;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -57,5 +55,10 @@ public class EventListener implements Listener {
     @EventHandler
     public void onEnterBed(PlayerBedEnterEvent e) {
         spawn.put(e.getPlayer().getUniqueId(), e.getBed().getLocation());
+    }
+
+    @EventHandler
+    public void onEat(PlayerItemConsumeEvent e) {
+        Bukkit.broadcastMessage(new ShapedRecipe(e.getItem()).getKey().getKey());
     }
 }
